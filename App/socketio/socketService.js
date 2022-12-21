@@ -1,6 +1,15 @@
-import io from "socket.io-client";
+import { log } from "console";
+import { createServer } from "http";
+import { Server } from "socket.io";
 
-const SOCKET_URL = io("http://localhost:3000");
+const httpServer = createServer();
+const io = new Server(httpServer, {});
+
+io.on("connection", (socket) => {
+  console.log("a user connected", socket);
+});
+
+httpServer.listen(3000);
 
 class WSService {
   initializeSocket = async () => {
@@ -26,4 +35,20 @@ class WSService {
       console.log("Error in socket", error);
     }
   };
+
+  emit(event, data = {}) {
+    this.socket.emit(event, data);
+  }
+
+  emit(event, cb = {}) {
+    this.socket.on(event, cb);
+  }
+
+  emit(listernerName = {}) {
+    this.socket.emit(listernerName);
+  }
 }
+
+const socketService = new WSService();
+
+export default socketService;

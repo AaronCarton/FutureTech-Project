@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { useState, useEffect } from "react";
 import * as localAuthentication from "expo-local-authentication";
+import socketService from "../socketio/socketService";
 
 export const mainStackNavigation = () => {
   const [isBiometricSupported, setIsBiometricSupported] = useState(false);
@@ -103,6 +104,10 @@ export const mainStackNavigation = () => {
       console.log({ biometricAuth });
     }
   };
+
+  useEffect(() => {
+    socketService.initializeSocket();
+  }, []);
   return (
     <SafeAreaView>
       <View className="flex-1 items-center justify-center">
