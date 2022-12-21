@@ -1,16 +1,9 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  Button,
-  Alert,
-  TouchableHighlight,
-} from "react-native";
+import { View, Text, SafeAreaView, Button, Alert } from "react-native";
 import { useState, useEffect } from "react";
 import * as localAuthentication from "expo-local-authentication";
-import socketService from "../socketio/socketService";
+import io from "socket.io-client";
 
-export const mainStackNavigation = () => {
+export const BiometricScanner = () => {
   const [isBiometricSupported, setIsBiometricSupported] = useState(false);
 
   // For face detection or fingerprint scan
@@ -105,25 +98,5 @@ export const mainStackNavigation = () => {
     }
   };
 
-  useEffect(() => {
-    socketService.initializeSocket();
-  }, []);
-  return (
-    <SafeAreaView>
-      <View className="flex-1 items-center justify-center">
-        <Text className="text-2xl font-bold">
-          {isBiometricSupported
-            ? "Your device is compatible with biometrics"
-            : "Face or Fingerprint is available on this device"}
-        </Text>
-        <TouchableHighlight className="h-16 mt-52">
-          <Button
-            title="Login with biometrics"
-            color="black"
-            onPress={handleBiometricAuth}
-          />
-        </TouchableHighlight>
-      </View>
-    </SafeAreaView>
-  );
+  return <View></View>;
 };
