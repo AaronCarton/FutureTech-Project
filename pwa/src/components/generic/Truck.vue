@@ -62,7 +62,7 @@
         transform="translate(61.92 631.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">0</tspan>
+        <tspan x="-12" y="0">0</tspan>
       </text>
     </g>
     <g id="slot_1" data-name="slot 1">
@@ -77,7 +77,7 @@
         transform="translate(61.92 548.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">1</tspan>
+        <tspan x="-12" y="0">1</tspan>
       </text>
     </g>
     <g id="slot_2" data-name="slot 2">
@@ -92,7 +92,7 @@
         transform="translate(61.92 465.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">2</tspan>
+        <tspan x="-12" y="0">2</tspan>
       </text>
     </g>
     <g id="slot_3" data-name="slot 3">
@@ -107,7 +107,7 @@
         transform="translate(61.92 382.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">3</tspan>
+        <tspan x="-12" y="0">3</tspan>
       </text>
     </g>
     <g id="slot_4" data-name="slot 4">
@@ -122,7 +122,7 @@
         transform="translate(61.92 299.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">4</tspan>
+        <tspan x="-12" y="0">4</tspan>
       </text>
     </g>
     <g id="slot_5" data-name="slot 5">
@@ -137,7 +137,7 @@
         transform="translate(61.92 216.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">5</tspan>
+        <tspan x="-12" y="0">5</tspan>
       </text>
     </g>
     <g id="slot_6" data-name="slot 6">
@@ -152,7 +152,7 @@
         transform="translate(61.92 134.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">6</tspan>
+        <tspan x="-12" y="0">6</tspan>
       </text>
     </g>
     <g id="slot_7" data-name="slot 7">
@@ -164,7 +164,7 @@
         transform="translate(61.92 51.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">7</tspan>
+        <tspan x="-12" y="0">7</tspan>
       </text>
     </g>
     <g id="slot_8" data-name="slot 8">
@@ -179,7 +179,7 @@
         transform="translate(144.92 51.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">8</tspan>
+        <tspan x="-12" y="0">8</tspan>
       </text>
     </g>
     <g id="slot_9" data-name="slot 9">
@@ -194,7 +194,7 @@
         transform="translate(227.92 51.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">9</tspan>
+        <tspan x="-12" y="0">9</tspan>
       </text>
     </g>
     <g id="slot_10" data-name="slot 10">
@@ -209,7 +209,7 @@
         transform="translate(307.84 51.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">10</tspan>
+        <tspan x="-12" y="0">10</tspan>
       </text>
     </g>
     <g id="slot_11" data-name="slot 11">
@@ -224,7 +224,7 @@
         transform="translate(390.84 51.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">11</tspan>
+        <tspan x="-12" y="0">11</tspan>
       </text>
     </g>
     <g id="slot_12" data-name="slot 12">
@@ -237,7 +237,7 @@
         transform="translate(473.84 51.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">12</tspan>
+        <tspan x="-12" y="0">12</tspan>
       </text>
     </g>
     <g id="slot_13" data-name="slot 13">
@@ -252,7 +252,7 @@
         transform="translate(473.84 134.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">13</tspan>
+        <tspan x="-12" y="0">13</tspan>
       </text>
     </g>
     <g id="slot_14" data-name="slot 14">
@@ -267,7 +267,7 @@
         transform="translate(473.84 217.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">14</tspan>
+        <tspan x="-12" y="0">14</tspan>
       </text>
     </g>
     <g id="slot_15" data-name="slot 15">
@@ -282,7 +282,7 @@
         transform="translate(473.84 300.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">15</tspan>
+        <tspan x="-12" y="0">15</tspan>
       </text>
     </g>
     <g id="slot_16" data-name="slot 16">
@@ -297,7 +297,7 @@
         transform="translate(473.84 383.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">16</tspan>
+        <tspan x="-12" y="0">16</tspan>
       </text>
     </g>
     <g id="slot_17" data-name="slot 17">
@@ -312,7 +312,7 @@
         transform="translate(473.84 466.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">17</tspan>
+        <tspan x="-12" y="0">17</tspan>
       </text>
     </g>
     <g id="slot_18" data-name="slot 18">
@@ -327,7 +327,7 @@
         transform="translate(473.84 549.25)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">18</tspan>
+        <tspan x="-12" y="0">18</tspan>
       </text>
     </g>
     <g id="slot_19" data-name="slot 19">
@@ -339,7 +339,7 @@
         transform="translate(473.17 631.95)"
         style="font-family: MyriadPro-Regular, 'Myriad Pro'; font-size: 12px"
       >
-        <tspan x="0" y="0">19</tspan>
+        <tspan x="-12" y="0">19</tspan>
       </text>
     </g>
   </svg>
@@ -360,6 +360,29 @@ export default {
   },
 
   setup({ slots, onClick }) {
+    enum slotIDs {
+      'slot_0' = 0,
+      'slot_1' = 1,
+      'slot_2' = 2,
+      'slot_3' = 3,
+      'slot_4' = 4,
+      'slot_5' = 5,
+      'slot_6' = 6,
+      'slot_7' = 7,
+      'slot_8' = 8,
+      'slot_9' = 9,
+      'slot_10' = 10,
+      'slot_11' = 11,
+      'slot_12' = 12,
+      'slot_13' = 13,
+      'slot_14' = 14,
+      'slot_15' = 15,
+      'slot_16' = 16,
+      'slot_17' = 17,
+      'slot_18' = 18,
+      'slot_19' = 19,
+    }
+
     const svg = ref<HTMLElement>()
     //create a for loop where you can loop through the slots in svg and add the number of this slot to the slot object
     //then you can use the slot number to highlight the slot
@@ -372,28 +395,25 @@ export default {
     })
 
     const populateSlots = () => {
-      slots.forEach((id) => {
+      slots.forEach((id: any) => {
         console.log(id)
 
         const slot = svg.value?.querySelector(`#slot_${id}`)
+
+        let slotSelect = slot?.querySelector('tspan')
+        //change the slot number to the slot id
+        console.log(slotIDs[id])
+
+        if (slotSelect) slotSelect.textContent = slotIDs[id]
+
         slot?.addEventListener('click', () => {
           console.log('clicked' + id)
-          onClick(id)
+          onClick(slotSelect?.textContent)
         })
-        console.log(slot)
       })
-    }
-    const InsertSlotNumber = (nr: number) => {
-      console.log(svg)
-    }
-    InsertSlotNumber(18)
-    const highlightSlot = () => {
-      console.log('highlight')
     }
 
     return {
-      highlightSlot,
-      InsertSlotNumber,
       svg,
     }
   },
