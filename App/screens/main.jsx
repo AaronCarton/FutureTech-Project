@@ -12,10 +12,10 @@ import * as localAuthentication from "expo-local-authentication";
 export const mainStackNavigation = () => {
   const [isBiometricSupported, setIsBiometricSupported] = useState(false);
 
-  // for face detection or fingerprint scan
+  // For face detection or fingerprint scan
   useEffect(() => {
     (async () => {
-      const compatible = await LocalAuthentication.hasHardwareAsync();
+      const compatible = await localAuthentication.hasHardwareAsync();
       setIsBiometricSupported(compatible);
     })();
   });
@@ -33,18 +33,17 @@ export const mainStackNavigation = () => {
     ]);
   };
 
-  const twoButtonAlert = () => {
-    Alert.alert("Welcome to app", "Please authenticate yourself", [
-      {
-        text: "Back",
-        onPress: () => console.log("Cancel Pressed"),
-        style: "cancel",
-      },
-      {
-        text: "OK",
-        onPress: () => console.log("OK Pressed"),
-      },
-    ]);
+  const Authenticated = () => {
+    Alert.alert(
+      "Your package is authenticated",
+      "The delivery guy will be right there!",
+      [
+        {
+          text: "OK",
+          onPress: () => console.log("OK Pressed"),
+        },
+      ]
+    );
   };
 
   const handleBiometricAuth = async () => {
@@ -83,14 +82,21 @@ export const mainStackNavigation = () => {
 
     // Authenticate with biometric
     const biometricAuth = await localAuthentication.authenticateAsync({
-      promptMessage: "Login with biometrics",
+      promptMessage: "Please authenticate yourself",
       cancelLabel: "Cancel",
       disableDeviceFallback: true,
     });
 
     // Log the user in on succes
-    if (biometricAuth) {
-      twoButtonAlert();
+    if (!biometricAuth.success) {
+      return alertComponent(
+        "Authentication failed",
+        "Please login with password",
+        "OK",
+        () => fallbackToDefaultAuth()
+      );
+    } else {
+      Authenticated();
       console.log({ isBiometricAvailable });
       console.log({ supportedBiomertricTypes });
       console.log({ savedBiometrics });
