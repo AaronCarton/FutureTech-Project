@@ -5,18 +5,18 @@
 </template>
 
 <script lang="ts">
-import { provide } from "@vue/runtime-core";
-import { DefaultApolloClient } from "@vue/apollo-composable";
+import { provide } from '@vue/runtime-core'
+import { DefaultApolloClient } from '@vue/apollo-composable'
 
-import useGraphQL from "./composables/useGraphQL";
+import useGraphQL from './composables/useGraphQL'
 
 export default {
   setup() {
-    const { apolloClient } = useGraphQL();
+    const { apolloClient } = useGraphQL()
 
-    provide(DefaultApolloClient, apolloClient);
+    provide(DefaultApolloClient, apolloClient)
 
-    return {};
+    return {}
   },
-};
+}
 </script>
