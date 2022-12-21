@@ -4,5 +4,5 @@ import { InputType, Field, PartialType } from '@nestjs/graphql'
 @InputType()
 export class UpdateVanInput extends PartialType(CreateVanInput) {
   @Field(() => [String])
-  packagesIds: string[]
+  parcelIds: string[]
 }

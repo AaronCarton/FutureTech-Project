@@ -1,8 +1,8 @@
 import { InputType, Field } from '@nestjs/graphql'
 
 @InputType()
-export class CreatePackageInput {
-  @Field()
+export class CreateParcelInput {
+  @Field() // GraphQL
   customerId: string
 
   @Field()

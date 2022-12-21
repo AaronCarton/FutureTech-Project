@@ -2,12 +2,12 @@ import { Module } from '@nestjs/common'
 import { VanService } from './van.service'
 import { VanResolver } from './van.resolver'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { PackageService } from '../package/package.service'
+import { ParcelService } from '../parcel/parcel.service'
 import { Van } from './entities/van.entity'
-import { Package } from '../package/entities/package.entity'
+import { Parcel } from '../parcel/entities/parcel.entity'
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Van, Package])],
-  providers: [VanResolver, VanService, PackageService],
+  imports: [TypeOrmModule.forFeature([Van, Parcel])],
+  providers: [VanResolver, VanService, ParcelService],
 })
 export class VanModule {}

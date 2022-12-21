@@ -3,20 +3,20 @@ import { VanService } from './van.service'
 import { Van } from './entities/van.entity'
 import { CreateVanInput } from './dto/create-van.input'
 import { UpdateVanInput } from './dto/update-van.input'
-import { Package } from '../package/entities/package.entity'
-import { PackageService } from '../package/package.service'
+import { Parcel } from '../parcel/entities/parcel.entity'
+import { ParcelService } from '../parcel/parcel.service'
 import { ClientMessage, MessageTypes } from 'src/bootstrap/entities/ClientMessage'
 
 @Resolver(() => Van)
 export class VanResolver {
   constructor(
     private readonly vanService: VanService,
-    private readonly packageService: PackageService,
+    private readonly parcelService: ParcelService,
   ) {}
 
   @ResolveField()
-  packages(@Parent() van: Van): Promise<Package>[] {
-    return van.packagesIds.map((id) => this.packageService.findOne(id))
+  parcels(@Parent() van: Van): Promise<Parcel>[] {
+    return van.parcelIds.map((id) => this.parcelService.findOne(id))
   }
 
   @Mutation(() => Van)
@@ -35,11 +35,19 @@ export class VanResolver {
   }
 
   @Mutation(() => Van)
-  updatePackagesInVan(
+  updateParcelsInVan(
     @Args('id', { type: () => String }) id: string,
-    @Args('packagesIds', { type: () => [String] }) packagesIds: string[],
+    @Args('parcelIds', { type: () => [String] }) parcelIds: string[],
   ) {
-    return this.vanService.update(id, { packagesIds })
+    return this.vanService.update(id, { parcelIds })
+  }
+
+  @Mutation(() => Van)
+  addParcelToVan(
+    @Args('vanId', { type: () => String }) vanId: string,
+    @Args('parcelId', { type: () => String }) parcelId: string,
+  ) {
+    return this.vanService.addParcelToVan(vanId, parcelId)
   }
 
   @Mutation(() => Van)

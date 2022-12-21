@@ -4,7 +4,7 @@ import { Column, CreateDateColumn, Entity, ObjectIdColumn, UpdateDateColumn } fr
 
 @Entity()
 @ObjectType()
-export class Package {
+export class Parcel {
   @Field(() => ID) // GraphQL
   @ObjectIdColumn() //typeORM // Map this field to the (generated) _id column in the database
   id: ObjectId

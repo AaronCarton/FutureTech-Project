@@ -17,9 +17,19 @@ export class NotificationsGateway implements OnGatewayConnection, OnGatewayDisco
 
   numberOfClients = 0
 
+  @SubscribeMessage('newParcel')
+  handleNewParcel(client: any, payload: any) {
+    this.server.emit('newParcel', payload)
+  }
+
   @SubscribeMessage('order:deliver')
   handlePackageDeliver(client: any, payload: any) {
     this.server.emit('order:deliver', payload)
+  }
+
+  @SubscribeMessage('ping')
+  ping(client: any, payload: any) {
+    this.server.emit('pong', 'pong')
   }
 
   @SubscribeMessage('order:authenticate')

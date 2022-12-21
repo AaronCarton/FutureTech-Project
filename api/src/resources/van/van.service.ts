@@ -25,6 +25,13 @@ export class VanService {
     return this.vanRepository.findOne(new ObjectId(id))
   }
 
+  async addParcelToVan(vanId: string, parcelId: string) {
+    const van = await this.vanRepository.findOne(new ObjectId(vanId))
+    return this.vanRepository.update(new ObjectId(vanId), {
+      parcelIds: [...van.parcelIds, parcelId],
+    })
+  }
+
   async update(id: string, updateVanInput: UpdateVanInput) {
     await this.vanRepository.update(id, updateVanInput)
     return this.vanRepository.findOne(new ObjectId(id))

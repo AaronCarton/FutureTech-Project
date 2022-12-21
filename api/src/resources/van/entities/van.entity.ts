@@ -1,6 +1,6 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql'
 import { ObjectId } from 'mongodb'
-import { Package } from 'src/resources/package/entities/package.entity'
+import { Parcel } from 'src/resources/parcel/entities/parcel.entity'
 import { Column, CreateDateColumn, Entity, ObjectIdColumn, UpdateDateColumn } from 'typeorm'
 
 @Entity()
@@ -10,11 +10,11 @@ export class Van {
   @ObjectIdColumn() //typeORM // Map this field to the (generated) _id column in the database
   id: ObjectId
 
-  @Field(() => [Package])
-  packages: Package[]
+  @Field(() => [Parcel])
+  parcels: Parcel[]
 
   @Column()
-  packagesIds: string[]
+  parcelIds: string[]
 
   @Field({ nullable: true })
   @CreateDateColumn({ type: 'timestamp', nullable: true })
