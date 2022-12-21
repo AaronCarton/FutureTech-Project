@@ -1,18 +1,40 @@
 export default () => {
-  const ndef = new NDEFReader()
-
   const writeNFC = async (message: string) => {
-    ndef
-      .write('Hello World')
-      .then(() => {
-        console.log('Message written.')
+    console.log('User clicked write button')
+
+    try {
+      const ndef = new NDEFReader()
+      await ndef.write('Hello world!')
+      console.log('> Message written')
+    } catch (error) {
+      console.log('Argh! ' + error)
+    }
+  }
+
+  const scanNFC = async () => {
+    console.log('User clicked scan button')
+
+    try {
+      const ndef = new NDEFReader()
+      await ndef.scan()
+      console.log('> Scan started')
+
+      ndef.addEventListener('readingerror', () => {
+        console.log('Argh! Cannot read data from the NFC tag. Try another one?')
       })
-      .catch((error) => {
-        console.log(`Write failed :-( try again: ${error}.`)
+
+      ndef.addEventListener('reading', ({ message, serialNumber }) => {
+        console.log(`> Serial Number: ${serialNumber}`)
+        console.log(`> Records: (${message.records.length})`)
+        return { message, serialNumber }
       })
+    } catch (error) {
+      console.log('Argh! ' + error)
+    }
   }
 
   return {
     writeNFC,
+    scanNFC,
   }
 }

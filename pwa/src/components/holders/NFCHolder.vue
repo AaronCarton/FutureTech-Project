@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex h-full w-full flex-col items-center justify-center">
     <router-view></router-view>
   </div>
 </template>
@@ -8,5 +8,5 @@
 export default {
   components: {},
   setup() {},
-};
+}
 </script>
