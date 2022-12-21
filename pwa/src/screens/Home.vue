@@ -58,7 +58,19 @@
               </DialogTitle>
               <div class="mt-2">
                 <p class="text-sm text-gray-500">
-                  This is {{ packageID }} and it is an empty slot.
+                  This is {{ selectedPackage?.id }}
+                </p>
+                <p class="text-sm text-gray-500">
+                  Name {{ selectedPackage?.name }}
+                </p>
+                <p class="text-sm text-gray-500">
+                  Description {{ selectedPackage?.description }}
+                </p>
+                <p class="text-sm text-gray-500">
+                  Address {{ selectedPackage?.address }}
+                </p>
+                <p class="text-sm text-gray-500">
+                  Customer {{ selectedPackage?.customerId }}
                 </p>
               </div>
 
@@ -89,6 +101,11 @@ import {
   TransitionRoot,
 } from '@headlessui/vue'
 import { ref } from 'vue'
+import useSocket from '../composables/useSocket'
+import { Parcel } from '../interfaces/parcel.interface'
+import useGraphQL from '../composables/useGraphQL'
+import { useQuery } from '@vue/apollo-composable'
+import { PARCELS } from '../graphql/query.parcels'
 export default {
   components: {
     Truck,
@@ -100,41 +117,42 @@ export default {
   },
   setup() {
     const packageID = ref('')
-    const ids: string[] = [
-      '0',
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-      '8',
-      '9',
-      '10',
-      '11',
-      '12',
-      '13',
-      '14',
-      '15',
-      '16',
-      '17',
-      '18',
-      '19',
-    ]
+    const ids = ref<Parcel[]>([])
+    const selectedPackage = ref<Parcel>()
 
     const isOpen = ref(false)
+    const { connectToServer, onNewParcel } = useSocket()
+    const { result, onResult } = useQuery(PARCELS)
+
+    onResult((result) => {
+      console.log(result)
+      result.data.parcels.forEach((parcel: Parcel) => {
+        ids.value.push(parcel)
+        console.log('pushing')
+      })
+      console.log('ids', ids)
+    })
 
     function closeModal() {
       isOpen.value = false
     }
     function openModal(id: string) {
       console.log(id)
+      selectedPackage.value = ids.value.find((parcel) => parcel.id === id)
       packageID.value = id
       isOpen.value = true
     }
 
-    return { ids, isOpen, closeModal, openModal, packageID }
+    const sockkk = async () => {
+      onNewParcel((parcel) => {
+        console.log('new parcel incoming', parcel)
+
+        ids.value.push(parcel)
+      })
+    }
+    sockkk()
+
+    return { ids, isOpen, closeModal, openModal, packageID, selectedPackage }
   },
 }
 </script>

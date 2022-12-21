@@ -13,7 +13,12 @@
       <p>Desc:{{ response.description || 'None provided' }}</p>
       <p>Address: {{ response.address }}</p>
       <p>Custom ID: {{ response.customerId }}</p>
-      <button @click="addToVan">Add to van</button>
+      <button
+        class="rounded-lg bg-red-500 px-16 py-2 text-xl"
+        @click="addToVan"
+      >
+        Add to van
+      </button>
     </template>
     <template v-else>No response yet...</template>
   </p>
@@ -43,17 +48,7 @@ export default {
 
     const addToVan = async () => {
       if (!response.value) return
-      const { mutate, onDone } = useMutation(ADD_PARCEL_TO_VAN, {
-        variables: {
-          vanId: '63a3112df3830b81a99d12cb',
-          parcelId: response.value.id,
-        },
-      })
-      mutate()
-      onDone((res) => {
-        console.log(res)
-        if (response.value) sendNewParcel(response.value)
-      })
+      sendNewParcel(response.value)
     }
 
     setInterval(async () => {

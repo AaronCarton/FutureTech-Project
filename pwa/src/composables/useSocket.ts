@@ -34,6 +34,13 @@ export default () => {
     }
   }
 
+  const onNewParcel = (callback: (parcel: Parcel) => void) => {
+    connectToServer()
+    if (socketServer.value) {
+      socketServer.value.on('newParcel', callback)
+    }
+  }
+
   const connectToServer = () => {
     if (socketServer.value) {
       return
@@ -54,5 +61,6 @@ export default () => {
     connectToServer,
     disconnectFromServer,
     sendNewParcel,
+    onNewParcel,
   }
 }
